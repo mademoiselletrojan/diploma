@@ -1,0 +1,95 @@
+@import '../../styles/variables';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f4ef;
+  padding: 60px 40px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.left {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+
+  h2 {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+.right {
+  flex: 1;
+  max-width: 400px;
+  background-color: #342f3d;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  input {
+    padding: 14px 16px;
+    background-color: #3e384a;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+
+    &::placeholder {
+      color: #bbb;
+      font-weight: 500;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $yellow-bg;
+      background-color: $purple-bg;
+    }
+  }
+
+  button {
+    background-color: $purple-bg;
+    color: $yellow-bg;
+    padding: 16px;
+    font-size: 17px;
+    font-weight: 700;
+    border: 2px solid $yellow-bg;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $yellow-bg;
+      color: #000;
+      border-color: $yellow-bg;
+    }
+  }
+}
+
+

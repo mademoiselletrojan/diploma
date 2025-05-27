@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
+.upFooter {
+  background-color: $purple-bg;
+  padding: 40px 20px;
+  color: white;
+
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logotip {
+      font-family: 'Tagesschrift', sans-serif;
+            color: $yellow-bg;
+            // text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+            font-size: 32px;
+  }
+
+  .ctaButton {
+    background-color: $purple-bg;
+    color: $yellow-bg;
+    border: 2px solid $yellow-bg;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $yellow-bg;
+      color: #000;
+    }
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 10px;
+  }
+}

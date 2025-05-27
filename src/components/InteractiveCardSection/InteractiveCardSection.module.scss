@@ -1,0 +1,41 @@
+.section {
+  display: flex;
+  gap: 0; // Убедиться, что нет отступов между элементами
+  width: 100%;
+}
+
+.card {
+  flex: 1 0 auto; // Более точное управление flex
+  margin: 0;       // Отсутствие внешних отступов
+  height: 380px;
+  box-shadow: -1px 0 15px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.icon {
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  a {
+    color: #1e40af;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@import '../../styles/variables';
+
+.topbar {
+  background-color: rgb(245, 201, 5);
+  height: 45px;
+  color: $black;
+  position: relative; // Убираем фиксированную позицию
+  z-index: 100; // Поднимаем Topbar выше других элементов
+}
+
+
+.select {
+  background: none;
+  border: none;
+  font-weight: 700; // Сделал текст более жирным
+  color: $black;
+  cursor: pointer;
+}
+
+// Стили для самого списка опций
+.select option {
+  font-weight: 700; // Делаем текст жирным
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; // Плавная анимация
+}
+
+.select option:hover {
+  background-color: rgba(245, 201, 5, 0.3); // Подсветка при наведении
+  color: $black; // Оставляем цвет текста, чтобы он не терялся
+}
+
+
+
+// Анимация плавного появления выпадающего списка
+.select {
+  transition: all 0.3s ease-in-out;
+}
+
+
+.loginButton {
+  border: 1px solid $black;
+  padding: 4px 10px;
+  background-color: transparent;
+  color: $black;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $purple-bg;
+    color:#fff
+  }
+}
+.customSelect {
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 4px 8px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px; // Отступ между текстом и стрелкой
+}
+
+.customSelect::after {
+  content: "▼"; // Символ стрелочки
+  font-size: 14px;
+  color: $black;
+  transition: transform 0.3s ease-in-out; // Плавная анимация
+}
+
+.customSelect:hover::after {
+  transform: translateY(2px); // Легкое движение стрелочки вниз при наведении
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid $black;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 5px 0;
+  min-width: 120px;
+}
+
+.dropdown li {
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown li:hover {
+  background-color: $green-bg;
+}

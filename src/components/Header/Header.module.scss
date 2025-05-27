@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.header {
+  background-color: $purple-bg;
+  width: 100%;
+}
+
+.ctaButton {
+  border: 2px solid $yellow-bg;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  background-color: transparent;
+  color: $yellow-bg;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $yellow-bg;
+    color: $black;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu_link {
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $green-bg; // Изменяет цвет текста при наведении
+  }
+}
+

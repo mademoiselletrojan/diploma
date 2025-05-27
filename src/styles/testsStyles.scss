@@ -1,0 +1,67 @@
+/*КНОПКИ*/
+
+/*Кнопка вперед*/
+%button_onward{
+    background-color: #342f3d;
+    transition: background-color 0.1s ease-in-out;
+    border-radius: 5px;
+    color: white;
+
+    &:hover {
+        background-color: #f5c905;
+        color: black;
+  }
+}
+.button_onward{
+    @extend %button_onward;
+}
+/*Кнопка назад*/
+%button_backward {
+  background-color: #342f3d;
+  transition: background-color 0.3s ease;
+  color: white;
+
+  &:hover {
+    background-color: #4a4558;
+  }
+}
+.button_backward{
+    @extend %button_backward;
+}
+/*Кнопка перехода к главной странице*/
+%button_backToMainPage{
+
+}
+
+/*PROGRESSBAR*/
+%progress_bar{
+  background-color: #4caf50;
+}
+.progress_bar{
+  @extend %progress_bar;
+}
+
+
+.question-content {
+   padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  
+  &:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.21);
+  }
+}
+
+/*ButtonDoItAgain*/
+%ButtonDoItAgain{
+  
+  background-color: #4a4558;
+  &:hover {
+    background-color: #342f3d;
+    transition: background-color 0.1s ease-in-out;
+  }
+}
+.ButtonDoItAgain{
+  @extend %ButtonDoItAgain;
+}

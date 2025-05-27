@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+
+.header {
+  background-color: $purple-bg;
+  height: 60px; // Фиксированная высота
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.backLink {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $green-bg;
+  }
+}
+
+.logo {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}

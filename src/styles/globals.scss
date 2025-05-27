@@ -1,0 +1,21 @@
+@use './variables' as *;
+@use './main';
+@use './testsStyles';
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  background-color: #fff;
+  color: $text-color;
+}
+
+.logotip {
+  font-family: 'Tagesschrift', sans-serif;
+  color: $yellow-bg;
+  font-size: 32px;
+}
