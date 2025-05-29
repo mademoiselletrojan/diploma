@@ -14,7 +14,7 @@ export default function Topbar() {
   };
 
   const handleLoginClick = () => {
-    router.push('/register'); // Перенаправление на страницу регистрации/авторизации
+    router.push('/login'); // Перенаправление на страницу регистрации/авторизации
   };
 
   return (

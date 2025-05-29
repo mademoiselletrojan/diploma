@@ -1,0 +1,100 @@
+@import '../styles/variables';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f4ef;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.form {
+  background-color: #342f3d;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .error {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  label {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  input {
+    padding: 14px 16px;
+    background-color: #3e384a;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &::placeholder {
+      color: #bbb;
+      font-weight: 500;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $yellow-bg;
+      background-color: $purple-bg;
+    }
+  }
+
+  button {
+    background-color: $purple-bg;
+    color: $yellow-bg;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    border: 2px solid $yellow-bg;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $yellow-bg;
+      color: #000;
+      border-color: $yellow-bg;
+    }
+  }
+
+  .backButton {
+    margin-top: 25px;
+    text-align: center;
+
+    button {
+      background: none;
+      border: none;
+      color: $yellow-bg;
+      cursor: pointer;
+      text-decoration: underline;
+
+      &:hover {
+        color: lighten($yellow-bg, 10%);
+      }
+    }
+  }
+}

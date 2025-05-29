@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import styles from '../../styles/loginPage.module.scss';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -30,37 +31,40 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
-        <h1 className="text-xl font-bold mb-4">Вход</h1>
-        {error && <p className="text-red-500 mb-2">{error}</p>}
+    <div className={styles.wrapper}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <h1>Вход</h1>
+        {error && <p className={styles.error}>{error}</p>}
 
-        <label className="block mb-2">
-          Email:
-          <input
-            type="email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full border p-2 mt-1"
-            required
-          />
-        </label>
+        <label>Email</label>
+        <input
+          type="email"
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+          required
+          placeholder="example@mail.com"
+        />
 
-        <label className="block mb-4">
-          Пароль:
-          <input
-            type="password"
-            value={form.password}
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-            className="w-full border p-2 mt-1"
-            required
-          />
-        </label>
+        <label>Пароль</label>
+        <input
+          type="password"
+          value={form.password}
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+          required
+          placeholder="Введите пароль"
+        />
 
-        <button type="submit" className="bg-purple-600 text-white px-4 py-2 rounded w-full">
-          Войти
-        </button>
+        <button type="submit">Войти</button>
+
+        <div className={styles.backButton}>
+          <button type="button" onClick={() => router.push('/register')}>Нет аккаунта? Зарегистрироваться!</button>
+          <button type="button" onClick={() => router.push('/')}>
+            Вернуться на главную
+          </button>
+          
+        </div>
       </form>
+      
     </div>
   );
 }

@@ -8,7 +8,8 @@ const books = [
     language: 'english',
     coverImage: '/book-covers/great-gatsby.jpg',
     content: '/books/great-gatsby.txt',
-    testId: 'english-level-b2-1'
+    testId: 'english-level-b2-1',
+    progress: 100 // 👈
   },
   {
     id: '1984',
@@ -19,7 +20,8 @@ const books = [
     language: 'english',
     coverImage: '/book-covers/1984.jpg',
     content: '/books/1984.txt',
-    testId: 'english-level-c1-1'
+    testId: 'english-level-c1-1',
+    progress: 40 // 👈
   },
   {
     id: 'pride-and-prejudice',
@@ -30,9 +32,11 @@ const books = [
     language: 'english',
     coverImage: '/book-covers/pride-prejudice.jpg',
     content: '/books/pride-prejudice.txt',
-    testId: 'english-level-b2-2'
+    testId: 'english-level-b2-2',
+    progress: 0 // 👈
   }
 ];
+
 
 export const getBookById = (id) => books.find(book => book.id === id) || null;
 export const getAllBooks = () => [...books];

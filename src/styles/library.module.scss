@@ -1,0 +1,30 @@
+%buttonS {
+  color: #342f3d;
+  cursor: pointer;
+
+  &:hover {
+    color: #767083
+  
+  }
+}
+
+.buttonS {
+  @extend %buttonS;
+}
+
+%button_backward {
+  background-color: #342f3d;
+  color: #f5c905;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+
+  &:hover {
+    background-color: #f5c905;
+    color: black;
+  }
+}
+.button_backward{
+    @extend %button_backward;
+}

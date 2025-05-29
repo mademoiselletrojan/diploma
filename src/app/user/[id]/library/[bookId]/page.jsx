@@ -2,17 +2,21 @@
 
 import { useParams, useRouter } from 'next/navigation';
 import { getBookById } from '../../../../../lib/books';
-import UpHeader from '../../../../../components/Header/Header';
 import { useState, useEffect } from 'react';
+import styles from '../../../../../styles/library.module.scss';
+import UserTopbar from '../../../../../components/UserTopbar/UserTopbar';
 
 export default function BookReaderPage() {
   const { id: userId, bookId } = useParams();
   const router = useRouter();
+
   const [book, setBook] = useState(null);
   const [content, setContent] = useState('');
+  const [user, setUser] = useState(null);           // состояние для пользователя
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Загрузка книги и контента
   useEffect(() => {
     const loadBook = async () => {
       try {
@@ -27,7 +31,7 @@ export default function BookReaderPage() {
         setBook(bookData);
 
         const response = await fetch(bookData.content);
-        if (!response.ok) throw new Error('Failed to load book content');
+        if (!response.ok) throw new Error('Не удалось загрузить содержимое книги');
         const text = await response.text();
         setContent(text);
       } catch (error) {
@@ -46,6 +50,33 @@ export default function BookReaderPage() {
     }
   }, [bookId, userId]);
 
+  // Загрузка данных пользователя
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await fetch('/api/user/me', {
+          credentials: 'include',
+          headers: {
+            'x-user-id': userId,
+          },
+        });
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.error || 'Не удалось загрузить данные пользователя');
+        }
+        const { data } = await res.json();
+        setUser(data);
+      } catch (err) {
+        console.error('Ошибка получения пользователя:', err);
+        setError(err.message || 'Не удалось загрузить данные пользователя');
+      }
+    };
+
+    if (userId) {
+      fetchUser();
+    }
+  }, [userId]);
+
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -57,7 +88,7 @@ export default function BookReaderPage() {
   if (error || !book) {
     return (
       <div>
-        <UpHeader />
+        <UserTopbar userName={user?.name} />
         <div className="container mx-auto p-4">
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <h1 className="text-2xl font-bold text-red-600 mb-4">{error || 'Книга не найдена'}</h1>
@@ -76,12 +107,12 @@ export default function BookReaderPage() {
 
   return (
     <div>
-      <UpHeader />
+      <UserTopbar userName={user?.name} />
 
       <div className="container mx-auto p-4">
-        <button 
+        <button
           onClick={() => router.push(`/user/${userId}`)}
-          className="mb-4 flex items-center text-purple-600 hover:text-purple-800"
+          className={styles.buttonS}
           aria-label="Вернуться в библиотеку пользователя"
         >
           ← Назад к библиотеке
@@ -97,13 +128,9 @@ export default function BookReaderPage() {
 
           <div className="mt-8 pt-4 border-t border-gray-200">
             <button
-              onClick={() => router.push(
-                book.language && book.id 
-                  ? `/tests/${book.language}/level?bookId=${book.id}` 
-                  : `/user/${userId}`
-              )}
-              className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-              disabled={!book.language || !book.id}
+              onClick={() => router.push(`/user/${userId}/library/${bookId}/test`)}
+              className={styles.button_backward}
+              disabled={!userId || !bookId}
             >
               Пройти тест по книге
             </button>

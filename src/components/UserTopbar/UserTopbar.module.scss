@@ -1,0 +1,75 @@
+@import '../../styles/variables';
+
+.topbar {
+  background-color: rgb(245, 201, 5);
+  height: 45px;
+  color: $black;
+  position: relative;
+  z-index: 100;
+
+  padding: 16px 12px;  // <-- изменено: сверху/снизу 16px, слева/справа 12px
+  box-sizing: border-box; // чтобы padding не ломал высоту
+}
+
+.customSelect {
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 4px 12px;  // <-- добавлены боковые отступы 12px
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.customSelect::after {
+  content: "▼";
+  font-size: 14px;
+  color: $black;
+  transition: transform 0.3s ease-in-out;
+}
+
+.customSelect:hover::after {
+  transform: translateY(2px);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid $black;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 5px 0;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.dropdown li {
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown li:hover {
+  background-color: $green-bg;
+}
+
+.logoutButton {
+  border: 1px solid $black;
+  padding: 4px 12px;  // <-- добавлены боковые отступы 12px
+  background-color: transparent;
+  color: $black;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $purple-bg;
+    color: #fff;
+  }
+}
