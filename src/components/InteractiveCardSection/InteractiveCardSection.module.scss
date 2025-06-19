@@ -1,12 +1,12 @@
 .section {
   display: flex;
-  gap: 0; // Убедиться, что нет отступов между элементами
+  gap: 0;
   width: 100%;
 }
 
 .card {
-  flex: 1 0 auto; // Более точное управление flex
-  margin: 0;       // Отсутствие внешних отступов
+  flex: 1 0 auto;
+  margin: 0;
   height: 380px;
   box-shadow: -1px 0 15px -1px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -15,6 +15,7 @@
   justify-content: center;
   text-align: center;
 }
+
 .icon {
   margin-bottom: 10px;
 }
@@ -31,7 +32,7 @@
   gap: 6px;
 
   a {
-    color: #1e40af;
+    color: #f5c905 !important; // Добавляем !important для приоритета
     text-decoration: none;
 
     &:hover {

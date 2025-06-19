@@ -11,6 +11,7 @@ export default function UserDashboard() {
   const { id } = useParams();
   const [books, setBooks] = useState([]);
   const [activeTab, setActiveTab] = useState('books');
+  const [activeSubTab, setActiveSubTab] = useState('english'); // Подвкладка по умолчанию
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [progressData, setProgressData] = useState({});
@@ -27,7 +28,7 @@ export default function UserDashboard() {
         const res = await fetch('/api/user/me', {
           credentials: 'include',
           headers: {
-            'x-user-id': id, // Передаем userId через заголовок
+            'x-user-id': id,
           },
         });
         if (!res.ok) {
@@ -83,6 +84,12 @@ export default function UserDashboard() {
     );
   }
 
+  // Фильтрация книг по языку
+  const filteredBooks =
+    activeSubTab === 'english'
+      ? books.filter((book) => book.language === 'english')
+      : books.filter((book) => book.language === 'french');
+
   return (
     <div>
       <UserTopbar userName={user?.name} />
@@ -110,18 +117,39 @@ export default function UserDashboard() {
           </button>
         </div>
 
+        {activeTab === 'books' && (
+          <div className="flex gap-4 mb-6">
+            <button
+              className={`${styles.buttonSS} ${
+                activeSubTab === 'english' ? styles.activeBooksLanguages : styles.inactiveLanguages
+              }`}
+              onClick={() => setActiveSubTab('english')}
+            >
+              Английский язык
+            </button>
+            <button
+              className={`${styles.buttonSS} ${
+                activeSubTab === 'french' ? styles.activeBooksLanguages : styles.inactiveLanguages
+              }`}
+              onClick={() => setActiveSubTab('french')}
+            >
+              Французский язык
+            </button>
+          </div>
+        )}
+
         {activeTab === 'books' ? (
-          books.length === 0 ? (
+          filteredBooks.length === 0 ? (
             <EmptyState />
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {books.map((book) => (
+              {filteredBooks.map((book) => (
                 <Link
                   key={book.id}
                   href={`/user/${id}/library/${book.id}`}
                   className="hover:shadow-lg transition-shadow"
                 >
-                  <BookCard book={book} progress={progressData[book.id] || 0} />
+                  <BookCard book={book} progress={progressData[book.id] || book.progress || 0} />
                 </Link>
               ))}
             </div>

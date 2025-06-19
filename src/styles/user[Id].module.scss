@@ -21,3 +21,28 @@
   background-color: #342f3d;
   color: white;
 }
+
+
+%buttonSS {
+  background-color: #342f3d;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonSS {
+  @extend %buttonSS;
+}
+
+.activeBooksLanguages {
+  background-color: #4caf50;
+  color: black;
+}
+
+.inactiveLanguages {
+  background-color: #342f3d;
+  color: white;
+}

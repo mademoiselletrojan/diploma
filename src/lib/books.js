@@ -1,3 +1,4 @@
+// src/lib/books.js
 const books = [
   {
     id: 'great-gatsby',
@@ -9,7 +10,6 @@ const books = [
     coverImage: '/book-covers/great-gatsby.jpg',
     content: '/books/great-gatsby.txt',
     testId: 'english-level-b2-1',
-    progress: 100 // 👈
   },
   {
     id: '1984',
@@ -21,7 +21,6 @@ const books = [
     coverImage: '/book-covers/1984.jpg',
     content: '/books/1984.txt',
     testId: 'english-level-c1-1',
-    progress: 40 // 👈
   },
   {
     id: 'pride-and-prejudice',
@@ -33,10 +32,19 @@ const books = [
     coverImage: '/book-covers/pride-prejudice.jpg',
     content: '/books/pride-prejudice.txt',
     testId: 'english-level-b2-2',
-    progress: 0 // 👈
-  }
+  },
+  {
+    id: 'le-petit-prince',
+    title: 'Le Petit Prince',
+    author: 'Antoine de Saint-Exupéry',
+    description: 'Un conte philosophique sur l’amitié et la découverte de soi.',
+    level: 'B1',
+    language: 'french',
+    coverImage: '/book-covers/le-petit-prince.jpg',
+    content: '/books/le-petit-prince.txt',
+    testId: 'french-level-b1-1',
+  },
 ];
 
-
-export const getBookById = (id) => books.find(book => book.id === id) || null;
+export const getBookById = (id) => books.find((book) => book.id === id) || null;
 export const getAllBooks = () => [...books];

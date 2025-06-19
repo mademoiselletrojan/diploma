@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function About() {
     return (
-        <section className={styles.about}>
+        <section id="about-section" className={styles.about}>
             <div className={styles.aboutContainer}>
                 {/* Левая часть — изображение */}
                 <div className={styles.aboutImage}>

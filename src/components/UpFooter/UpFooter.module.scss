@@ -16,10 +16,10 @@
   }
 
   .logotip {
-      font-family: 'Tagesschrift', sans-serif;
-            color: $yellow-bg;
-            // text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
-            font-size: 32px;
+    font-family: 'Tagesschrift', sans-serif;
+    color: $yellow-bg;
+    font-size: 32px;
+    margin-bottom: 40px; // Увеличиваем расстояние от логотипа до кнопки
   }
 
   .ctaButton {

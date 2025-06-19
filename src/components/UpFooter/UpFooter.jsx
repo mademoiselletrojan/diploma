@@ -7,17 +7,15 @@ export default function UpFooter() {
     <div className={styles.upFooter}>
       <div className={styles.container}>
         <div className={styles.logotip}>BonVoyage</div>
-        <button className={styles.ctaButton}>Начать</button>
         <div className={styles.icons}>
-          {[1, 2, 3, 4].map((n) => (
-            <a key={n} href={`https://example.com/page${n}`} target="_blank" rel="noopener noreferrer">
-  <Image src="/icon1.png" alt={`icon${n}`} width={40} height={40} />
-</a>
-
-          ))}
+          <a href="https://example.com/whatsapp" target="_blank" rel="noopener noreferrer">
+            <Image src="/whatsapp_733641.png" alt="WhatsApp" width={40} height={40} />
+          </a>
+          <a href="https://example.com/telegram" target="_blank" rel="noopener noreferrer">
+            <Image src="/telegram_5968940.png" alt="Telegram" width={40} height={40} />
+          </a>
         </div>
       </div>
     </div>
   );
 }
-

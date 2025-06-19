@@ -6,11 +6,13 @@ import UpHeader from '../../../../../../components/Header/Header';
 import { greatGatsbyTest } from '@/profiletests/books/great-gatsby.test';
 import { nineteenEightyFourTest } from '@/profiletests/books/1984.test';
 import { prideAndPrejudiceTest } from '@/profiletests/books/pride-and-prejudice.test';
+import { lepetitPrince } from '@/profiletests/books/le-petit-prince.test';
 
 const bookTests = {
   'great-gatsby': greatGatsbyTest,
   '1984': nineteenEightyFourTest,
   'pride-prejudice': prideAndPrejudiceTest,
+  'le-petit-prince': lepetitPrince
 };
 
 export default function BookTestPage() {

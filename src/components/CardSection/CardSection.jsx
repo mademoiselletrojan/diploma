@@ -5,7 +5,7 @@ export default function CardSection() {
     <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 py-12 max-w-7xl mx-auto">
       {/* Верхние карточки */}
       <Card
-        iconSrc="/icon1.png"
+        iconSrc="/task.png"
         title="Тест на знание грамматики"
         description="Оценка уровня знания грамматики английского языка"
         borderColor="#342F3D"
@@ -14,7 +14,7 @@ export default function CardSection() {
       />
 
       <Card
-        iconSrc="/icon1.png"
+        iconSrc="/idea.png"
         title="Тест на словарный запас"
         description="Оценка уровня знания слов английского языка"
         borderColor="#474256"
@@ -22,7 +22,7 @@ export default function CardSection() {
         href="../tests/english/vocabulary"
       />
       <Card
-        iconSrc="/icon1.png"
+        iconSrc="/grades.png"
         title="Тест на оценку знаний"
         description="Оценка уровня английского языка от А1-С2"
         borderColor="#5A556F"
@@ -30,7 +30,7 @@ export default function CardSection() {
         href="../tests/english/level"
       />
       <Card
-        iconSrc="/icon1.png"
+        iconSrc="/graduate-cap.png"
         title="Тест на общие знания"
         description="Тест на уровень английского языка"
         borderColor="#6D6890"
@@ -40,7 +40,7 @@ export default function CardSection() {
 
       {/* Нижние карточки */}
       <Card
-        iconSrc="/icon1.png"
+        iconSrc="/task.png"
         title="Тест на знание грамматики"
         description="Оценка уровня знания грамматики французского языка"
         borderColor="#342F3D"
@@ -48,7 +48,7 @@ export default function CardSection() {
         href="../tests/french/grammar"
       />
       <Card
-        iconSrc="/icon1.png"
+        iconSrc="/idea.png"
         title="Тест на словарный запас"
         description="Оценка уровня знания слов французского языка"
         borderColor="#474256"
@@ -56,7 +56,7 @@ export default function CardSection() {
         href="../tests/french/vocabulary"
       />
       <Card
-        iconSrc="/icon1.png"
+        iconSrc="/grades.png"
         title="Тест на оценку знаний"
         description="Оценка уровня французского языка от А1-С2"
         borderColor="#5A556F"
@@ -64,7 +64,7 @@ export default function CardSection() {
         href="../tests/french/level"
       />
       <Card
-        iconSrc="/icon1.png"
+        iconSrc="/graduate-cap.png"
         title="Тест на общие знания"
         description="Тест на уровень французского языка"
         borderColor="#6D6890"
